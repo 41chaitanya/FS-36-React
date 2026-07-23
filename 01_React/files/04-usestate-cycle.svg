@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#553c9a"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">The useState Update Cycle</text>
+
+  <!-- 4 boxes in a cycle -->
+  <rect x="60" y="80" width="190" height="90" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="155" y="110" text-anchor="middle" font-size="13" font-weight="bold" fill="#553c9a">1. Initial Render</text>
+  <text x="155" y="132" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#2d3748">const [count, setCount]</text>
+  <text x="155" y="150" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#2d3748">= useState(0)</text>
+
+  <line x1="250" y1="125" x2="330" y2="125" stroke="#553c9a" stroke-width="2.5" marker-end="url(#arrow4)"/>
+
+  <rect x="340" y="80" width="190" height="90" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="435" y="110" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5282">2. UI Shows 0</text>
+  <text x="435" y="132" text-anchor="middle" font-size="11" fill="#2d3748">&lt;button onClick=</text>
+  <text x="435" y="150" text-anchor="middle" font-size="11" fill="#2d3748">{"{"}() =&gt; setCount(count+1){"}"}&gt;</text>
+
+  <line x1="530" y1="125" x2="610" y2="125" stroke="#553c9a" stroke-width="2.5" marker-end="url(#arrow4)"/>
+
+  <rect x="620" y="80" width="220" height="90" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="730" y="110" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c4221">3. User Clicks Button</text>
+  <text x="730" y="132" text-anchor="middle" font-size="11" fill="#2d3748">setCount(1) is called</text>
+  <text x="730" y="150" text-anchor="middle" font-size="11" fill="#2d3748">React schedules an update</text>
+
+  <!-- down arrow -->
+  <line x1="730" y1="170" x2="730" y2="230" stroke="#553c9a" stroke-width="2.5" marker-end="url(#arrow4)"/>
+
+  <rect x="620" y="240" width="220" height="90" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="730" y="270" text-anchor="middle" font-size="13" font-weight="bold" fill="#c53030">4. Component Re-renders</text>
+  <text x="730" y="292" text-anchor="middle" font-size="11" fill="#2d3748">count is now 1</text>
+  <text x="730" y="310" text-anchor="middle" font-size="11" fill="#2d3748">React updates the real DOM</text>
+
+  <!-- arrow back to left, completing loop -->
+  <path d="M 620 285 C 400 340, 200 340, 155 220" fill="none" stroke="#553c9a" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow4)"/>
+  <text x="380" y="365" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#553c9a">loop repeats on every state change</text>
+
+  <text x="155" y="200" text-anchor="middle" font-size="11" fill="#718096">(waits for interaction)</text>
+</svg>

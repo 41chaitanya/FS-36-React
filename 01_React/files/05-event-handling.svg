@@ -1,0 +1,37 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="300" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">Event Handling in React</text>
+
+  <rect x="30" y="70" width="180" height="90" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="120" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5282">User Action</text>
+  <text x="120" y="122" text-anchor="middle" font-size="11.5" fill="#2d3748">Click, type, hover,</text>
+  <text x="120" y="140" text-anchor="middle" font-size="11.5" fill="#2d3748">submit, etc.</text>
+
+  <line x1="210" y1="115" x2="270" y2="115" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow5)"/>
+
+  <rect x="280" y="70" width="200" height="90" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="380" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#553c9a">SyntheticEvent</text>
+  <text x="380" y="122" text-anchor="middle" font-size="11" fill="#2d3748">React wraps the native</text>
+  <text x="380" y="140" text-anchor="middle" font-size="11" fill="#2d3748">browser event (cross-browser)</text>
+
+  <line x1="480" y1="115" x2="540" y2="115" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow5)"/>
+
+  <rect x="550" y="70" width="200" height="90" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="650" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c4221">Handler Function</text>
+  <text x="650" y="122" text-anchor="middle" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">onClick={"{"}handleClick{"}"}</text>
+  <text x="650" y="140" text-anchor="middle" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">function runs, may setState</text>
+
+  <line x1="650" y1="160" x2="650" y2="200" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow5)"/>
+
+  <rect x="530" y="205" width="240" height="60" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="650" y="240" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c53030">UI re-renders if state changed</text>
+
+  <text x="120" y="200" text-anchor="middle" font-size="11" fill="#718096" width="180">camelCase names:</text>
+  <text x="120" y="220" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#718096">onClick, onChange,</text>
+  <text x="120" y="238" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#718096">onSubmit, onMouseOver</text>
+</svg>

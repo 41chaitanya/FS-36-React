@@ -1,0 +1,35 @@
+<svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2b6cb0"/>
+    </marker>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c53030"/>
+    </marker>
+  </defs>
+  <rect width="900" height="340" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">Props Flow Downward — Data is a One-Way Street</text>
+
+  <!-- Parent -->
+  <rect x="330" y="55" width="240" height="80" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2.5"/>
+  <text x="450" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">&lt;App /&gt;  (Parent)</text>
+  <text x="450" y="104" text-anchor="middle" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">const [user] = useState("Sam")</text>
+  <text x="450" y="122" text-anchor="middle" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">&lt;Profile name={"{"}user{"}"} /&gt;</text>
+
+  <!-- Down arrow labelled props -->
+  <line x1="450" y1="135" x2="450" y2="195" stroke="#2b6cb0" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="480" y="168" font-size="13" font-weight="bold" fill="#2b6cb0">props ↓</text>
+  <text x="480" y="185" font-size="11" fill="#4a5568">(read-only)</text>
+
+  <!-- Child -->
+  <rect x="330" y="200" width="240" height="80" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2.5"/>
+  <text x="450" y="227" text-anchor="middle" font-size="14" font-weight="bold" fill="#276749">&lt;Profile /&gt;  (Child)</text>
+  <text x="450" y="249" text-anchor="middle" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">function Profile({"{"} name {"}"}) {"{"}</text>
+  <text x="450" y="267" text-anchor="middle" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">return &lt;h2&gt;{"{"}name{"}"}&lt;/h2&gt;; {"}"}</text>
+
+  <!-- Callback path (events go up) -->
+  <path d="M 600 260 C 700 260, 700 100, 590 90" fill="none" stroke="#c53030" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow3)"/>
+  <text x="705" y="175" font-size="13" font-weight="bold" fill="#c53030" transform="rotate(-90 705 175)">events / callbacks ↑</text>
+
+  <text x="450" y="320" text-anchor="middle" font-size="12.5" fill="#4a5568">A child cannot change its own props — it can only call a function the parent passed down.</text>
+</svg>

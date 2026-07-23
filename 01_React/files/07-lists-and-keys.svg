@@ -1,0 +1,48 @@
+<svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="340" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">Lists &amp; Keys — Turning an Array into Elements</text>
+
+  <!-- data array -->
+  <rect x="40" y="60" width="230" height="150" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="155" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5282">Data Array</text>
+  <text x="55" y="112" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">[</text>
+  <text x="70" y="132" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"{"}id:1, text:"Milk"{"}"},</text>
+  <text x="70" y="152" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"{"}id:2, text:"Eggs"{"}"},</text>
+  <text x="70" y="172" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"{"}id:3, text:"Bread"{"}"}</text>
+  <text x="55" y="192" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">]</text>
+
+  <line x1="270" y1="135" x2="330" y2="135" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow7)"/>
+  <text x="300" y="122" text-anchor="middle" font-size="11" fill="#718096">.map()</text>
+
+  <!-- mapped elements -->
+  <rect x="340" y="60" width="240" height="150" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="460" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#553c9a">JSX per item</text>
+  <text x="355" y="112" font-size="11" font-family="Consolas, monospace" fill="#2d3748">items.map(item =&gt;</text>
+  <text x="370" y="132" font-size="11" font-family="Consolas, monospace" fill="#2d3748">&lt;li key={"{"}item.id{"}"}&gt;</text>
+  <text x="385" y="152" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"{"}item.text{"}"}</text>
+  <text x="370" y="172" font-size="11" font-family="Consolas, monospace" fill="#2d3748">&lt;/li&gt;</text>
+  <text x="355" y="192" font-size="11" font-family="Consolas, monospace" fill="#2d3748">)</text>
+
+  <line x1="580" y1="135" x2="640" y2="135" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow7)"/>
+
+  <!-- rendered list -->
+  <rect x="650" y="60" width="210" height="150" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+  <text x="755" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#276749">Rendered &lt;ul&gt;</text>
+  <rect x="665" y="98" width="180" height="26" rx="5" fill="#ffffff" stroke="#a0aec0"/>
+  <text x="675" y="116" font-size="11.5" fill="#2d3748">🥛 Milk   key=1</text>
+  <rect x="665" y="130" width="180" height="26" rx="5" fill="#ffffff" stroke="#a0aec0"/>
+  <text x="675" y="148" font-size="11.5" fill="#2d3748">🥚 Eggs   key=2</text>
+  <rect x="665" y="162" width="180" height="26" rx="5" fill="#ffffff" stroke="#a0aec0"/>
+  <text x="675" y="180" font-size="11.5" fill="#2d3748">🍞 Bread  key=3</text>
+
+  <!-- warning callout -->
+  <rect x="40" y="240" width="820" height="70" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2"/>
+  <text x="450" y="265" text-anchor="middle" font-size="13" font-weight="bold" fill="#c53030">Why keys matter</text>
+  <text x="450" y="288" text-anchor="middle" font-size="12" fill="#2d3748">Keys let React match array items across re-renders, so it can update, reorder, or remove the</text>
+  <text x="450" y="303" text-anchor="middle" font-size="12" fill="#2d3748">right DOM node instead of re-creating everything. Use a stable id — never the array index if the list can reorder.</text>
+</svg>

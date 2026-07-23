@@ -1,0 +1,38 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="380" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">Functional Components vs Class Components</text>
+
+  <!-- Functional column -->
+  <rect x="40" y="55" width="380" height="300" rx="12" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="230" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5282">Functional Component ✅ modern</text>
+  <text x="60" y="115" font-size="12" font-family="Consolas, monospace" fill="#2d3748">function Greeting({name}) {"{"}</text>
+  <text x="75" y="138" font-size="12" font-family="Consolas, monospace" fill="#2d3748">const [count, setCount]</text>
+  <text x="90" y="158" font-size="12" font-family="Consolas, monospace" fill="#2d3748">= useState(0);</text>
+  <text x="75" y="181" font-size="12" font-family="Consolas, monospace" fill="#2d3748">return &lt;h1&gt;Hi {"{"}name{"}"}&lt;/h1&gt;;</text>
+  <text x="60" y="204" font-size="12" font-family="Consolas, monospace" fill="#2d3748">{"}"}</text>
+
+  <line x1="60" y1="220" x2="400" y2="220" stroke="#bee3f8" stroke-width="1.5"/>
+  <text x="60" y="242" font-size="12.5" fill="#2c5282">• Plain JavaScript function</text>
+  <text x="60" y="264" font-size="12.5" fill="#2c5282">• Uses Hooks (useState, useEffect...)</text>
+  <text x="60" y="286" font-size="12.5" fill="#2c5282">• Less boilerplate, easier to read</text>
+  <text x="60" y="308" font-size="12.5" fill="#2c5282">• No "this" keyword confusion</text>
+  <text x="60" y="330" font-size="12.5" fill="#2c5282">• Recommended for all new code</text>
+
+  <!-- Class column -->
+  <rect x="480" y="55" width="380" height="300" rx="12" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="670" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#9c4221">Class Component 🕰 legacy</text>
+  <text x="500" y="112" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">class Greeting extends</text>
+  <text x="515" y="131" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">React.Component {"{"}</text>
+  <text x="515" y="150" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">state = { "{" } count: 0 { "}" };</text>
+  <text x="515" y="169" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">render() {"{"}</text>
+  <text x="530" y="188" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">return &lt;h1&gt;Hi {"{"}this.props</text>
+  <text x="545" y="204" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">.name{"}"}&lt;/h1&gt;;</text>
+  <text x="515" y="220" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">{"}"}{"}"}</text>
+
+  <line x1="500" y1="232" x2="840" y2="232" stroke="#feebc8" stroke-width="1.5"/>
+  <text x="500" y="254" font-size="12.5" fill="#9c4221">• Needs "extends React.Component"</text>
+  <text x="500" y="276" font-size="12.5" fill="#9c4221">• State via this.state / this.setState</text>
+  <text x="500" y="298" font-size="12.5" fill="#9c4221">• Lifecycle methods (componentDidMount)</text>
+  <text x="500" y="320" font-size="12.5" fill="#9c4221">• "this" binding often trips up beginners</text>
+  <text x="500" y="342" font-size="12.5" fill="#9c4221">• Still seen in older codebases</text>
+</svg>

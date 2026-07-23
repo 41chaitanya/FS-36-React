@@ -1,0 +1,45 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow9" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">The Event Object (SyntheticEvent)</text>
+
+  <!-- handler signature -->
+  <rect x="50" y="55" width="800" height="55" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="70" y="88" font-size="13" font-family="Consolas, monospace" fill="#553c9a">function handleChange(</text>
+  <text x="330" y="88" font-size="13" font-weight="bold" font-family="Consolas, monospace" fill="#c53030">event</text>
+  <text x="365" y="88" font-size="13" font-family="Consolas, monospace" fill="#553c9a">) {"{"} console.log(</text>
+  <text x="565" y="88" font-size="13" font-weight="bold" font-family="Consolas, monospace" fill="#c53030">event</text>
+  <text x="600" y="88" font-size="13" font-family="Consolas, monospace" fill="#553c9a">.target.value); {"}"}</text>
+
+  <line x1="360" y1="110" x2="360" y2="140" stroke="#c53030" stroke-width="2.5" marker-end="url(#arrow9)"/>
+  <text x="450" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#c53030">the event object is auto-passed to every handler</text>
+
+  <!-- Event object breakdown -->
+  <rect x="50" y="150" width="380" height="230" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="240" y="178" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">Key Properties</text>
+  <text x="70" y="205" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.target</text>
+  <text x="90" y="223" font-size="11" fill="#4a5568">→ the DOM element that fired it</text>
+  <text x="70" y="248" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.target.value</text>
+  <text x="90" y="266" font-size="11" fill="#4a5568">→ current input/textarea value</text>
+  <text x="70" y="291" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.type</text>
+  <text x="90" y="309" font-size="11" fill="#4a5568">→ "click", "change", "submit"...</text>
+  <text x="70" y="334" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.currentTarget</text>
+  <text x="90" y="352" font-size="11" fill="#4a5568">→ element the handler is bound to</text>
+
+  <!-- Methods -->
+  <rect x="460" y="150" width="390" height="230" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="655" y="178" text-anchor="middle" font-size="14" font-weight="bold" fill="#9c4221">Key Methods</text>
+  <text x="480" y="205" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.preventDefault()</text>
+  <text x="500" y="223" font-size="11" fill="#4a5568">→ stops default browser action</text>
+  <text x="500" y="241" font-size="11" fill="#4a5568">   (e.g. form page-reload on submit)</text>
+  <text x="480" y="266" font-size="12" font-family="Consolas, monospace" fill="#2d3748">event.stopPropagation()</text>
+  <text x="500" y="284" font-size="11" fill="#4a5568">→ stops the event from bubbling</text>
+  <text x="500" y="302" font-size="11" fill="#4a5568">   up to parent element handlers</text>
+  <text x="480" y="327" font-size="11.5" fill="#c53030" font-weight="bold">Note: React wraps the native browser</text>
+  <text x="480" y="345" font-size="11.5" fill="#c53030" font-weight="bold">event so behavior is consistent</text>
+  <text x="480" y="363" font-size="11.5" fill="#c53030" font-weight="bold">across all browsers.</text>
+</svg>
