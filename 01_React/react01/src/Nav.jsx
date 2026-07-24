@@ -1,20 +1,20 @@
 import React from 'react'
 
-const Nav = ({value1,value2,value3}) => {
-    console.log(value1,value2,value3)
-  return (
+const Nav = () => {
+  const isAdmain=false
+
+
+  if(isAdmain){
+return (
     <div>Nav</div>
   )
+  }
+  else{
+    return(<>"not admin"</>)
+  }
+
+
+  
 }
 
 export default Nav
-
-
-// Nav(a){
-
-// }
-
-// App(){
-//     let a=2
-//     Nav(a)
-// }

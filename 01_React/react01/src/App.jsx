@@ -1,8 +1,19 @@
 import React from 'react'
+import Com from './Com.jsx'
 
 const App = () => {
+
+
+  const a=true
   return (
-    <div>App</div>
+   <>
+
+
+  {  a&& <Com/>}
+   
+   
+   
+   </>
   )
 }
 
