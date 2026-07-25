@@ -1,0 +1,53 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow16" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">Custom Hooks — Extract, Reuse, Compose</text>
+
+  <!-- Two components with duplicated logic -->
+  <rect x="30" y="55" width="220" height="90" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2"/>
+  <text x="140" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#c53030">ComponentA</text>
+  <text x="45" y="102" font-size="10.5" fill="#2d3748">useState + useEffect</text>
+  <text x="45" y="118" font-size="10.5" fill="#2d3748">to track window width</text>
+  <text x="45" y="134" font-size="10" fill="#c53030">(duplicated code)</text>
+
+  <rect x="30" y="160" width="220" height="90" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2"/>
+  <text x="140" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#c53030">ComponentB</text>
+  <text x="45" y="207" font-size="10.5" fill="#2d3748">useState + useEffect</text>
+  <text x="45" y="223" font-size="10.5" fill="#2d3748">to track window width</text>
+  <text x="45" y="239" font-size="10" fill="#c53030">(same code, copy-pasted)</text>
+
+  <line x1="250" y1="100" x2="330" y2="150" stroke="#4a5568" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow16)"/>
+  <line x1="250" y1="205" x2="330" y2="165" stroke="#4a5568" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow16)"/>
+  <text x="290" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">extract shared logic</text>
+
+  <!-- custom hook box -->
+  <rect x="340" y="90" width="260" height="130" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="470" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#553c9a">useWindowWidth()</text>
+  <text x="355" y="142" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">function useWindowWidth() {"{"}</text>
+  <text x="370" y="158" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">const [w, setW] = useState(</text>
+  <text x="385" y="174" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">window.innerWidth);</text>
+  <text x="370" y="190" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">useEffect(() =&gt; {"{"}...{"}"}, []);</text>
+  <text x="370" y="206" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">return w;</text>
+
+  <line x1="600" y1="130" x2="660" y2="100" stroke="#38a169" stroke-width="2" marker-end="url(#arrow16)"/>
+  <line x1="600" y1="180" x2="660" y2="220" stroke="#38a169" stroke-width="2" marker-end="url(#arrow16)"/>
+
+  <!-- consumers -->
+  <rect x="670" y="65" width="200" height="70" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+  <text x="770" y="92" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#276749">ComponentA</text>
+  <text x="685" y="112" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">const w = useWindowWidth();</text>
+
+  <rect x="670" y="215" width="200" height="70" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+  <text x="770" y="242" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#276749">ComponentB</text>
+  <text x="685" y="262" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">const w = useWindowWidth();</text>
+
+  <!-- rules box -->
+  <rect x="30" y="300" width="840" height="85" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="450" y="325" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c4221">Rules for Custom Hooks</text>
+  <text x="55" y="348" font-size="11.5" fill="#2d3748">• Name must start with "use" (useWindowWidth, useFetch, useAuth) — lets React apply the Rules of Hooks.</text>
+  <text x="55" y="368" font-size="11.5" fill="#2d3748">• Only call hooks at the top level of a function — never inside loops, conditions, or nested callbacks.</text>
+</svg>

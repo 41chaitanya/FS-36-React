@@ -1,0 +1,32 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">useMemo vs useCallback — Memoizing Values and Functions</text>
+
+  <!-- useMemo -->
+  <rect x="40" y="60" width="390" height="180" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="235" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">useMemo — memoizes a VALUE</text>
+  <text x="55" y="115" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">const sortedList = useMemo(() =&gt; {"{"}</text>
+  <text x="70" y="135" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">return expensiveSort(items);</text>
+  <text x="55" y="155" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">{"}"}, [items]);</text>
+  <text x="55" y="182" font-size="11.5" fill="#2c5282">Re-runs the calculation ONLY when</text>
+  <text x="55" y="200" font-size="11.5" fill="#2c5282">"items" changes — otherwise reuses</text>
+  <text x="55" y="218" font-size="11.5" fill="#2c5282">the cached result from last render.</text>
+
+  <!-- useCallback -->
+  <rect x="460" y="60" width="400" height="180" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="660" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#553c9a">useCallback — memoizes a FUNCTION</text>
+  <text x="475" y="115" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">const handleClick = useCallback(() =&gt; {"{"}</text>
+  <text x="490" y="135" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">doSomething(id);</text>
+  <text x="475" y="155" font-size="11.5" font-family="Consolas, monospace" fill="#2d3748">{"}"}, [id]);</text>
+  <text x="475" y="182" font-size="11.5" fill="#553c9a">Returns the SAME function reference</text>
+  <text x="475" y="200" font-size="11.5" fill="#553c9a">between renders (until "id" changes) —</text>
+  <text x="475" y="218" font-size="11.5" fill="#553c9a">prevents needless child re-renders.</text>
+
+  <!-- Why it matters -->
+  <rect x="40" y="260" width="820" height="120" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="450" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#9c4221">Why This Matters: React.memo + New References</text>
+  <text x="60" y="315" font-size="12" fill="#2d3748">Without memoization, every parent re-render creates a brand-new function/array/object —</text>
+  <text x="60" y="335" font-size="12" fill="#2d3748">even if the contents are identical. A child wrapped in <tspan font-family="Consolas, monospace">React.memo</tspan> still re-renders because</text>
+  <text x="60" y="355" font-size="12" fill="#2d3748">the prop reference changed. useMemo/useCallback keep the reference stable so memo actually works.</text>
+  <text x="60" y="372" font-size="10.5" fill="#c53030">⚠ Don't overuse — memoizing cheap calculations can cost more than it saves.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow15" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">useReducer — Predictable State Transitions</text>
+
+  <!-- Component -->
+  <rect x="40" y="60" width="200" height="70" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="140" y="88" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2c5282">Component</text>
+  <text x="140" y="108" text-anchor="middle" font-size="10.5" fill="#2d3748">dispatch({"{"}type:"increment"{"}"})</text>
+
+  <line x1="240" y1="95" x2="310" y2="95" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow15)"/>
+  <text x="275" y="83" text-anchor="middle" font-size="10.5" fill="#718096">dispatch(action)</text>
+
+  <!-- Reducer function -->
+  <rect x="320" y="60" width="260" height="90" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="2.5"/>
+  <text x="450" y="85" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#553c9a">reducer(state, action)</text>
+  <text x="335" y="107" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">switch (action.type) {"{"}</text>
+  <text x="350" y="124" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">case "increment":</text>
+  <text x="365" y="141" font-size="10.5" font-family="Consolas, monospace" fill="#2d3748">return {"{"}...state, count: state.count+1{"}"};</text>
+
+  <line x1="580" y1="95" x2="650" y2="95" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrow15)"/>
+  <text x="615" y="83" text-anchor="middle" font-size="10.5" fill="#718096">returns</text>
+
+  <!-- New state -->
+  <rect x="660" y="60" width="200" height="70" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+  <text x="760" y="88" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#276749">New State</text>
+  <text x="760" y="108" text-anchor="middle" font-size="10.5" fill="#2d3748">{"{"} count: 1 {"}"}</text>
+
+  <!-- loop back -->
+  <path d="M 760 130 C 760 200, 140 200, 140 130" fill="none" stroke="#4a5568" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow15)"/>
+  <text x="450" y="210" text-anchor="middle" font-size="11.5" fill="#4a5568">triggers re-render with the new state, UI updates</text>
+
+  <!-- setup code -->
+  <rect x="40" y="235" width="820" height="120" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="450" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#9c4221">Setup</text>
+  <text x="60" y="288" font-size="12" font-family="Consolas, monospace" fill="#2d3748">const [state, dispatch] = useReducer(reducer, { "{" } count: 0 { "}" });</text>
+  <text x="60" y="310" font-size="12" font-family="Consolas, monospace" fill="#2d3748">&lt;button onClick={"{"}() =&gt; dispatch({"{"}type:"increment"{"}"}){"}"}&gt;+1&lt;/button&gt;</text>
+  <text x="60" y="332" font-size="11" fill="#4a5568">Best when state logic is complex, has many sub-values, or the next state depends on the previous one.</text>
+</svg>

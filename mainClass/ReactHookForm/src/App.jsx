@@ -1,47 +1,37 @@
-import {useForm} from 'react-hook-form'
+import { useForm } from "react-hook-form";
 const App = () => {
+  const { register, watch,formState:{errors} ,handleSubmit} = useForm();
 
+  const email = watch("email");
+  const password = watch("password");
 
-  const {register,getValues} =useForm()
-
-
-
-  const getName=()=>{
-    console.log(getValues("name"))
-    console.log(getValues("email"))
-    console.log(getValues("tech"))
-    console.log(getValues("asia"))
-    console.log(getValues("chacha"))
+  const submission=(data)=>{
+    console.log(data)
   }
+
   return (
     <>
-    
-    
-      {/* <input type="text"  value={name}/> */}
-    <input placeholder='chacha' type="text" {...register("chacha")}/>
+    <form onSubmit={handleSubmit(submission)} >
+
+      <input
+        type=""
+        {...register("email", {
+          required: "email is required",
+          pattern: {
+            value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
+            message:"in valid  email"
+          },
+        })}
+        />
+      {errors.email?.message}
 
 
-
-
-      <input type="text" {...register("name")} />
-      <input type="email" {...register("email")} />
-      Teach
-      <input type="radio" id="html" name="fav_language" value="HTML" {...register("tech")}/>
-      <input type="radio" id="css" name="fav_language" value="CSS" {...register("tech")}/>
-
-
-
-        <select name="" id="" {...register("asia")}>
-
-          <option value="i">IND</option>
-          <option value="p">PAK</option>
-          <option value="b">BNG</option>
-          <option value="s">SRL</option>
-          <option value="a">AFG</option>
-        </select>
-      <button onClick={getName}>name</button>
+      <input type="password" {...register("password",{minLength:{value:6,message:"atleat 6 character"}})} />
+        {errors.password?.message}
+      <input type="submit" value="submit" />
+        </form>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

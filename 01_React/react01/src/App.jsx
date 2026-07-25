@@ -1,19 +1,19 @@
 import React from 'react'
-import Com from './Com.jsx'
 
 const App = () => {
 
-
-  const a=true
+  const click=(e)=>{
+    console.log("e",e)
+    console.log("clicked")
+  }
   return (
-   <>
+    <> 
+    <h1 name="" onClick={}></h1>
 
 
-  {  a&& <Com/>}
-   
-   
-   
-   </>
+    prin
+    
+    </>
   )
 }
 

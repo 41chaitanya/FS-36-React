@@ -1,0 +1,34 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow12" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">useState — Two Ways to Update</text>
+
+  <!-- Direct update -->
+  <rect x="40" y="60" width="380" height="140" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="230" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">Direct Value</text>
+  <text x="60" y="115" font-size="12" font-family="Consolas, monospace" fill="#2d3748">setCount(count + 1);</text>
+  <text x="60" y="140" font-size="11.5" fill="#4a5568">Uses the "count" from THIS render.</text>
+  <text x="60" y="160" font-size="11.5" fill="#c53030">⚠ Risky in loops or rapid clicks —</text>
+  <text x="60" y="178" font-size="11.5" fill="#c53030">may read a stale value.</text>
+
+  <!-- Functional update -->
+  <rect x="460" y="60" width="400" height="140" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+  <text x="660" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#276749">Functional Update ✅ safer</text>
+  <text x="480" y="115" font-size="12" font-family="Consolas, monospace" fill="#2d3748">setCount(prev =&gt; prev + 1);</text>
+  <text x="480" y="140" font-size="11.5" fill="#4a5568">React guarantees "prev" is the</text>
+  <text x="480" y="158" font-size="11.5" fill="#4a5568">latest state, even with batching.</text>
+  <text x="480" y="180" font-size="11.5" fill="#276749">Recommended when new state depends</text>
+  <text x="480" y="196" font-size="11.5" fill="#276749">on the previous state.</text>
+
+  <!-- Object/array state -->
+  <rect x="40" y="220" width="820" height="130" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="450" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#9c4221">Updating Objects &amp; Arrays — Always Spread, Never Mutate</text>
+  <text x="60" y="275" font-size="12" font-family="Consolas, monospace" fill="#2d3748">const [user, setUser] = useState({"{"} name: "Sam", age: 28 {"}"});</text>
+  <text x="60" y="298" font-size="12" font-family="Consolas, monospace" fill="#2d3748">setUser({"{"} ...user, age: 29 {"}"});  // spread old, override changed field</text>
+  <text x="60" y="321" font-size="12" font-family="Consolas, monospace" fill="#2d3748">setItems(prev =&gt; [...prev, newItem]); // never prev.push(newItem)</text>
+  <text x="60" y="340" font-size="10.5" fill="#c53030">Mutating state directly won't trigger a re-render — React compares references.</text>
+</svg>

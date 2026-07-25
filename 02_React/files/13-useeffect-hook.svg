@@ -1,0 +1,46 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="440" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a202c">useEffect — Dependency Arrays Control When It Runs</text>
+
+  <!-- 3 variants -->
+  <rect x="30" y="55" width="270" height="130" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="165" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#c53030">No dependency array</text>
+  <text x="45" y="108" font-size="11" font-family="Consolas, monospace" fill="#2d3748">useEffect(() =&gt; {"{"}</text>
+  <text x="60" y="126" font-size="11" font-family="Consolas, monospace" fill="#2d3748">console.log("ran");</text>
+  <text x="45" y="144" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"}"});</text>
+  <text x="45" y="168" font-size="11" fill="#c53030" font-weight="bold">Runs after EVERY render</text>
+
+  <rect x="315" y="55" width="270" height="130" rx="10" fill="#fffaf0" stroke="#dd6b20" stroke-width="2.5"/>
+  <text x="450" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c4221">Empty array [ ]</text>
+  <text x="330" y="108" font-size="11" font-family="Consolas, monospace" fill="#2d3748">useEffect(() =&gt; {"{"}</text>
+  <text x="345" y="126" font-size="11" font-family="Consolas, monospace" fill="#2d3748">fetchInitialData();</text>
+  <text x="330" y="144" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"}"}, []);</text>
+  <text x="330" y="168" font-size="11" fill="#9c4221" font-weight="bold">Runs ONCE, after first render</text>
+
+  <rect x="600" y="55" width="270" height="130" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2.5"/>
+  <text x="735" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#276749">[dependency, ...]</text>
+  <text x="615" y="108" font-size="11" font-family="Consolas, monospace" fill="#2d3748">useEffect(() =&gt; {"{"}</text>
+  <text x="630" y="126" font-size="11" font-family="Consolas, monospace" fill="#2d3748">fetchUser(userId);</text>
+  <text x="615" y="144" font-size="11" font-family="Consolas, monospace" fill="#2d3748">{"}"}, [userId]);</text>
+  <text x="615" y="168" font-size="11" fill="#276749" font-weight="bold">Runs when "userId" changes</text>
+
+  <!-- Cleanup timeline -->
+  <rect x="30" y="210" width="840" height="205" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5"/>
+  <text x="450" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">Cleanup Function Timeline</text>
+
+  <text x="55" y="265" font-size="12" font-family="Consolas, monospace" fill="#2d3748">useEffect(() =&gt; {"{"}</text>
+  <text x="75" y="285" font-size="12" font-family="Consolas, monospace" fill="#2d3748">const id = setInterval(tick, 1000);  // setup</text>
+  <text x="75" y="305" font-size="12" font-family="Consolas, monospace" fill="#2d3748">return () =&gt; clearInterval(id);      // cleanup</text>
+  <text x="55" y="325" font-size="12" font-family="Consolas, monospace" fill="#2d3748">{"}"}, []);</text>
+
+  <line x1="55" y1="345" x2="850" y2="345" stroke="#bee3f8" stroke-width="2"/>
+
+  <circle cx="90" cy="375" r="6" fill="#3182ce"/>
+  <text x="105" y="380" font-size="11.5" fill="#2c5282">Mount → effect runs, sets up interval</text>
+
+  <circle cx="90" cy="398" r="6" fill="#dd6b20"/>
+  <text x="105" y="403" font-size="11.5" fill="#9c4221">Before next effect run (dep changed) → cleanup fires first, THEN new effect runs</text>
+
+  <circle cx="470" cy="375" r="6" fill="#e53e3e"/>
+  <text x="485" y="380" font-size="11.5" fill="#c53030">Unmount → cleanup fires one last time (prevents memory leaks)</text>
+</svg>
