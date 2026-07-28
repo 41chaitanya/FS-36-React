@@ -1,19 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
+import UseState from './useState/UseState.jsx'
 
 const App = () => {
-  console.log("re rerenderd")
-
-
-  const [a,setA]=useState(0)
   return (
     <>
-    <h1 onClick={()=>{setA(a+1)
-      console.log("clicked")
-    }}>{a}</h1>
+      <UseState/>
     
-
-
     </>
   )
 }
