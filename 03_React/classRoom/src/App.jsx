@@ -1,27 +1,22 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
+import {useForm} from 'react-hook-form'
 
 const App = () => {
-  const h1Ref=useRef()
+  const {register ,getValues,handleSubmit}=useForm()
 
 
-
-  useEffect(()=>{
-    console.log(h1Ref.current)
-  },[])
-
-
-  console.log(h1Ref.current)
+  const divRef=useRef(1)
   return (
-    <div>
-      <h1 ref={h1Ref}>hello</h1>
-      <video src=""></video>
+    <>
 
-
-
-
-
-
-    </div>
+    {}
+    <div>{divRef.current}</div>
+    <button onClick={()=>{
+      console.log(getValues("name"))
+    }}>inc</button>
+      <input type="text" {...register("name")}/>
+    
+    </>
   )
 }
 
