@@ -1,0 +1,71 @@
+react -use effect
+    effect -> mount , update , unmount`
+    side effect --> something out side the. react. rendering
+    Syntax
+
+    react compoent should only return. ui 
+
+        what about  API request
+                    Timer
+                    Event listener
+                    Saving data
+
+    How useEffect Works
+
+        React Process
+
+        Component Render
+
+        ↓
+
+        UI Painted
+
+        ↓
+
+        useEffect Runs
+
+        example multiple. console.log
+
+        order of execution
+        Render
+
+        ↓
+
+        Commit to DOM
+
+        ↓
+
+        Browser Paint
+
+        ↓
+
+        useEffect Executes
+
+
+        Dependency Array
+        no array
+        empty array
+        wiht one. dependency
+        Multiple Dependencies
+
+
+        Cleanup Function
+
+        clean up function
+
+        Timer
+        Event Listener
+        WebSocket
+        Subscription
+
+
+        useEffect(()=>{
+
+            return ()=>{
+
+            }
+
+        },[])
+
+        api call 
+        axios
