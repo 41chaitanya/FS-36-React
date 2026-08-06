@@ -1,0 +1,31 @@
+react --> api call
+    get map and clicking on map get the whether
+
+
+
+        npm install react-leaflet leaflet   
+
+
+        in main .jsx
+
+        
+        import "leaflet/dist/leaflet.css";
+
+
+        map container. 
+        leflet react code 
+        Location marker 
+        useMapEvents()
+        click e.latlng
+        get lat and long
+
+
+
+
+        https://nominatim.openstreetmap.org/reverse?format=json&lat=LAT&lon=LNG
+ 
+
+
+
+
+        https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code

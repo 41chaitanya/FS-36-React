@@ -14,6 +14,7 @@ const About = () => {
     return ()=>{
         clearInterval(a)
         
+        
     } //clean up function or destroy function
   }, [count]);
 
