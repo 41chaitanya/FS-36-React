@@ -1,20 +1,14 @@
-import React, { useRef } from 'react'
-import {useForm} from 'react-hook-form'
+import React, { useState } from 'react'
+import Main from './pages/Main'
+import NameProvider from './context/nameContext'
 
 const App = () => {
-  const {register ,getValues,handleSubmit}=useForm()
-
-
-  const divRef=useRef(1)
   return (
     <>
+    <NameProvider>
 
-    {}
-    <div>{divRef.current}</div>
-    <button onClick={()=>{
-      console.log(getValues("name"))
-    }}>inc</button>
-      <input type="text" {...register("name")}/>
+      <Main/>
+    </NameProvider>
     
     </>
   )

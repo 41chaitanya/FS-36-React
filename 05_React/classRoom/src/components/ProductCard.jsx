@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { productContext } from "../context/productContext.jsx";
 
-const ProductCard = ({ product,handleAddToCart }) => {
+const ProductCard = ({ product}) => {
+
+  const {handleAddToCart}=useContext(productContext)
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-200">
       {/* Product Image */}

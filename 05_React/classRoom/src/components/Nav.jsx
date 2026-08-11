@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { showContext } from "../context/showContext.jsx";
 
-const Nav = ({setShowProduct}) => {
+const Nav = () => {
+  const {setShowProduct}=useContext(showContext)
   return (
     <nav className="bg-white shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">

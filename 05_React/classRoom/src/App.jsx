@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Nav from "./components/Nav.jsx";
 import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
+import { showContext } from "./context/showContext.jsx";
+import { productContext } from "./context/productContext.jsx";
 
 const App = () => {
-  const [allProduct, setAllProduct] = useState([]);
+
   const [selectedProduct, setSelectedProduct] = useState([]); //cart 
 
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const data = await res.json();
-
-      setAllProduct(data);
-    })();
-  }, []);
-
-  const handleAddToCart = (product) => {
-      setSelectedProduct((prev)=>[...prev,product])
-  };
 
 
-  const [showProduct, setShowProduct] = useState(true);
+  const {showProduct}=useContext(showContext)
 
   return (
     <>
-      <Nav setShowProduct={setShowProduct} />
+      <Nav  />
+
+
+      
       {showProduct ? (
         <Product
-          allProduct={allProduct}
-          handleAddToCart={handleAddToCart}
+          
          
         />
       ) : (
