@@ -1,0 +1,185 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "aria.codes",
+      "fullName": "Aria Sharma",
+      "avatarUrl": "https://picsum.photos/seed/u1/200",
+      "bio": "Frontend dev. Coffee addict. Building things that break gracefully.",
+      "followersCount": 1240,
+      "followingCount": 312,
+      "postsCount": 3,
+      "isVerified": false,
+      "createdAt": "2023-02-11T09:00:00Z"
+    },
+    {
+      "id": "u2",
+      "username": "leo_treks",
+      "fullName": "Leo Fernandez",
+      "avatarUrl": "https://picsum.photos/seed/u2/200",
+      "bio": "Mountains > malls. Currently in Himachal.",
+      "followersCount": 8934,
+      "followingCount": 201,
+      "postsCount": 3,
+      "isVerified": true,
+      "createdAt": "2021-06-04T14:22:00Z"
+    },
+    {
+      "id": "u3",
+      "username": "mina.bakes",
+      "fullName": "Mina Chowdhury",
+      "avatarUrl": "https://picsum.photos/seed/u3/200",
+      "bio": "Sourdough experiments and other kitchen crimes 🍞",
+      "followersCount": 542,
+      "followingCount": 189,
+      "postsCount": 2,
+      "isVerified": false,
+      "createdAt": "2024-01-19T18:10:00Z"
+    },
+    {
+      "id": "u4",
+      "username": "devraj.runs",
+      "fullName": "Devraj Singh",
+      "avatarUrl": "https://picsum.photos/seed/u4/200",
+      "bio": "Marathon #7 in training. Slow and steady.",
+      "followersCount": 315,
+      "followingCount": 402,
+      "postsCount": 2,
+      "isVerified": false,
+      "createdAt": "2022-09-30T07:45:00Z"
+    },
+    {
+      "id": "u5",
+      "username": "priya.paints",
+      "fullName": "Priya Nair",
+      "avatarUrl": "https://picsum.photos/seed/u5/200",
+      "bio": "Watercolor and bad puns.",
+      "followersCount": 2103,
+      "followingCount": 98,
+      "postsCount": 2,
+      "isVerified": true,
+      "createdAt": "2020-11-02T12:00:00Z"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": "p1",
+      "userId": "u1",
+      "imageUrl": "https://picsum.photos/seed/p1/600/600",
+      "caption": "Refactored this component 4 times today. Worth it.",
+      "location": "Bengaluru, India",
+      "likesCount": 87,
+      "commentsCount": 2,
+      "createdAt": "2026-08-15T10:30:00Z",
+      "tags": ["coding", "webdev"]
+    },
+    {
+      "id": "p2",
+      "userId": "u2",
+      "imageUrl": "https://picsum.photos/seed/p2/600/600",
+      "caption": "Sunrise at 4200m. No filter needed.",
+      "location": "Spiti Valley, Himachal Pradesh",
+      "likesCount": 1502,
+      "commentsCount": 3,
+      "createdAt": "2026-08-16T05:15:00Z",
+      "tags": ["travel", "mountains", "sunrise"]
+    },
+    {
+      "id": "p3",
+      "userId": "u3",
+      "imageUrl": "https://picsum.photos/seed/p3/600/600",
+      "caption": "Attempt #12 at a decent crumb structure. Getting there.",
+      "location": "Kolkata, India",
+      "likesCount": 64,
+      "commentsCount": 1,
+      "createdAt": "2026-08-17T16:00:00Z",
+      "tags": ["baking", "sourdough"]
+    },
+    {
+      "id": "p4",
+      "userId": "u4",
+      "imageUrl": "https://picsum.photos/seed/p4/600/600",
+      "caption": "18km done. Legs regret everything.",
+      "location": "Pune, India",
+      "likesCount": 45,
+      "commentsCount": 1,
+      "createdAt": "2026-08-17T06:40:00Z",
+      "tags": ["running", "training"]
+    },
+    {
+      "id": "p5",
+      "userId": "u5",
+      "imageUrl": "https://picsum.photos/seed/p5/600/600",
+      "caption": "Rainy afternoon, wet-on-wet technique.",
+      "location": "Goa, India",
+      "likesCount": 320,
+      "commentsCount": 2,
+      "createdAt": "2026-08-18T13:20:00Z",
+      "tags": ["art", "watercolor"]
+    },
+    {
+      "id": "p6",
+      "userId": "u1",
+      "imageUrl": "https://picsum.photos/seed/p6/600/600",
+      "caption": "Dark mode for everything, including my soul.",
+      "location": null,
+      "likesCount": 210,
+      "commentsCount": 0,
+      "createdAt": "2026-08-18T20:05:00Z",
+      "tags": ["design"]
+    },
+    {
+      "id": "p7",
+      "userId": "u2",
+      "imageUrl": "https://picsum.photos/seed/p7/600/600",
+      "caption": "Camp coffee tastes better at altitude, fight me.",
+      "location": "Spiti Valley, Himachal Pradesh",
+      "likesCount": 980,
+      "commentsCount": 1,
+      "createdAt": "2026-08-19T06:00:00Z",
+      "tags": ["travel", "coffee"]
+    }
+  ],
+
+  "comments": [
+    { "id": "c1", "postId": "p1", "userId": "u3", "text": "The eternal dev struggle 😂", "createdAt": "2026-08-15T11:00:00Z" },
+    { "id": "c2", "postId": "p1", "userId": "u4", "text": "Show us the diff", "createdAt": "2026-08-15T11:45:00Z" },
+    { "id": "c3", "postId": "p2", "userId": "u1", "text": "This is unreal, save travels", "createdAt": "2026-08-16T06:00:00Z" },
+    { "id": "c4", "postId": "p2", "userId": "u5", "text": "Adding this to my bucket list", "createdAt": "2026-08-16T07:10:00Z" },
+    { "id": "c5", "postId": "p2", "userId": "u3", "text": "Take me with you next time", "createdAt": "2026-08-16T09:30:00Z" },
+    { "id": "c6", "postId": "p3", "userId": "u1", "text": "That crumb is actually great", "createdAt": "2026-08-17T16:30:00Z" },
+    { "id": "c7", "postId": "p4", "userId": "u2", "text": "Beast mode", "createdAt": "2026-08-17T07:00:00Z" },
+    { "id": "c8", "postId": "p5", "userId": "u1", "text": "This belongs in a gallery", "createdAt": "2026-08-18T14:00:00Z" },
+    { "id": "c9", "postId": "p5", "userId": "u4", "text": "The colors are so soft", "createdAt": "2026-08-18T15:12:00Z" },
+    { "id": "c10", "postId": "p7", "userId": "u5", "text": "Altitude does hit different", "createdAt": "2026-08-19T06:20:00Z" }
+  ],
+
+  "likes": [
+    { "postId": "p1", "userId": "u2" },
+    { "postId": "p1", "userId": "u3" },
+    { "postId": "p2", "userId": "u1" },
+    { "postId": "p2", "userId": "u3" },
+    { "postId": "p2", "userId": "u4" },
+    { "postId": "p2", "userId": "u5" },
+    { "postId": "p3", "userId": "u1" },
+    { "postId": "p4", "userId": "u2" },
+    { "postId": "p5", "userId": "u1" },
+    { "postId": "p5", "userId": "u2" },
+    { "postId": "p6", "userId": "u3" },
+    { "postId": "p6", "userId": "u4" },
+    { "postId": "p7", "userId": "u5" }
+  ],
+
+  "follows": [
+    { "followerId": "u1", "followingId": "u2" },
+    { "followerId": "u1", "followingId": "u5" },
+    { "followerId": "u2", "followingId": "u1" },
+    { "followerId": "u3", "followingId": "u1" },
+    { "followerId": "u3", "followingId": "u2" },
+    { "followerId": "u4", "followingId": "u2" },
+    { "followerId": "u4", "followingId": "u5" },
+    { "followerId": "u5", "followingId": "u2" },
+    { "followerId": "u5", "followingId": "u1" }
+  ]
+}
