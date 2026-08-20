@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext.jsx'
 const Profile = () => {
     const {logdInUser}=useContext(UserContext)
   return (
-    <div>{logdInUser.email}</div>
+    <div>{logdInUser.eyeColor}{logdInUser.eyeColor}</div>
   )
 }
 

@@ -11,7 +11,7 @@ export const StoriesProvider=({children})=>{
         (async () => {
             const res=await fetch("https://dummyjson.com/users")
             const data=await res.json()
-            console.log(data.users)
+         
             setUsers(data.users)
         })()
     },[])

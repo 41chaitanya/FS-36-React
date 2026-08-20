@@ -4,14 +4,14 @@ import Message from "../pages/Message.jsx";
 import Reel from "../pages/Reel.jsx";
 import Explore from "../pages/Explore.jsx";
 import Home from "../pages/Home.jsx";
-import Loign from "../pages/Loign.jsx";
+import Login from "../pages/Login.jsx";
 const appRouter = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     Component: AppLayout,
     children: [
       {
-        index:true,
+        index: true,
         Component: Home,
       },
       {
@@ -29,9 +29,9 @@ const appRouter = createBrowserRouter([
     ],
   },
   {
-    path:"login",
-    Component:Loign
-  }
+    path: "/login",
+    Component: Login,
+  },
 ]);
 
 export default appRouter;
