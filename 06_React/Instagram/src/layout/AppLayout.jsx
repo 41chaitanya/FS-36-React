@@ -14,12 +14,11 @@ const AppLayout = () => {
     const {isLogedIn}=useContext(UserContext)
     if(isLogedIn){
         return (
-    <div>
-      {/* <SideNav /> */}
-    <Outlet/>
-     
-      {/* message right side  middle */}
-      {/* feed */}
+    <div className="flex min-h-screen">
+      <SideNav />
+      <main className="ml-64 flex-1 p-6">
+        <Outlet/>
+      </main>
     </div>
   );
     }
