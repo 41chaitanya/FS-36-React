@@ -7,7 +7,7 @@ const AppLayout = () => {
 
     const {isLogedIn}=useContext(UserContext)
 
-    if(isLogedIn){
+    if(true){
         return (
     <div className="flex min-h-screen">
       <SideNav />

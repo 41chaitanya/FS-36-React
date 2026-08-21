@@ -5,8 +5,7 @@ import Nav from '../components/Nav.jsx'
 const AppLayout = () => {
   return (
     <div>
-        hello i am app layout
-        <Nav/>
+        <Nav/>j
         <Outlet/>
     </div>
   )
