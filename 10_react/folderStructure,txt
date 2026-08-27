@@ -1,0 +1,70 @@
+src
+    router
+    pages/screens
+    components
+    layouts
+    context
+    utils
+    apis
+    app  / store
+    reducer
+
+
+
+
+
+
+
+
+feature based architecture
+
+
+
+src
+
+    product
+        src 
+            pages   
+                all
+                id
+                category
+            context
+                productcontext
+            layouts 
+                productLayout
+            components 
+                productCart
+            router
+                /all
+                /:categoty
+                /:id
+    authUi
+        src
+            pages
+                login
+                signup
+                welcome
+            context 
+                userContext
+            layouts
+                authLayout
+            router
+                /login
+                /signup
+                /welcome
+    cartUi
+    shared
+
+
+
+
+
+
+
+
+cosnt [user,setUser]=useState({})
+
+
+loign(){
+    setUser()
+}
