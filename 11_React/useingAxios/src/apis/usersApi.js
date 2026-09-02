@@ -39,5 +39,11 @@ export const deleteById=async (id) => {
 }
 
 
+export const loign=async (loginData) => {
+    const {data}=await API.post("/auth/login",loginData)
+    console.log(data)
+}
+
+
 
 

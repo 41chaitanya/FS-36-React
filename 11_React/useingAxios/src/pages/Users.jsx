@@ -12,43 +12,67 @@ const Users = () => {
         })()
     }, [update])
     return (
-        <div>
-            {users.map((u) => {
-                return <div key={u._id}>
-                    {u.name}
-                    {u.email}
-                    <img src={u.profileImageUrl} alt="" />
-                    <button onClick={async() => {
-                        const detail = {
-                            name: "Amit ",
-                            email: "homeMisnister@gmail.com",
-                            password: "12345678",
-                            gender: "male",
-                            profileImageUrl: "https://imgs.search.brave.com/n4CR7RGslXirS3GBNPdACQ8WjEJf7SuUKQ0uZvje5-c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjcy/MjE4NDU2L3Bob3Rv/L211bWJhaS1pbmRp/YWFwcmlsLTIxLWJq/cC1wcmVzaWRlbnQt/YW1pdC1zaGFoLWR1/cmluZy10aGUtaW5h/dWd1cmF0aW9uLW9m/LXRoZS0yOXRoLXNh/dmFya2FyLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1IMXF0/MmFqWXlIUFdQbGJK/X3h1TzhDX2lBcVhG/MGdjY0o4bUpsVGY3/QlZvPQ"
-                        }
-                        const isUpdate =await  updateAllDataById(u._id, detail)
-                        setUpdate(isUpdate)
+    <div className="users-container">
+        {users.map((u) => {
+            return (
+                <div className="user-card" key={u._id}>
+                    <img
+                        className="user-image"
+                        src={u.profileImageUrl}
+                        alt={u.name}
+                    />
 
-                    }}>updateAll</button>
+                    <div className="user-details">
+                        <h3>{u.name}</h3>
+                        <p>{u.email}</p>
+                    </div>
 
+                    <div className="user-actions">
+                        <button
+                            className="update-all-btn"
+                            onClick={async () => {
+                                const detail = {
+                                    name: "Amit",
+                                    email: "homeMisnister@gmail.com",
+                                    password: "12345678",
+                                    gender: "male",
+                                    profileImageUrl: "https://imgs.search.brave.com/n4CR7RGslXirS3GBNPdACQ8WjEJf7SuUKQ0uZvje5-c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjcy/MjE4NDU2L3Bob3Rv/L211bWJhaS1pbmRp/YWFwcmlsLTIxLWJq/cC1wcmVzaWRlbnQt/YW1pdC1zaGFoLWR1/cmluZy10aGUtaW5h/dWd1cmF0aW9uLW9m/LXRoZS0yOXRoLXNh/dmFya2FyLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1IMXF0/MmFqWXlIUFdQbGJK/X3h1TzhDX2lBcVhG/MGdjY0o4bUpsVGY3/QlZvPQ"
+                                }
 
-                    <button onClick={()=>{
-                        const updated= updateById(u._id,{
-                            name:"nirmala ji"
-                        })
-                        setUpdate(updated)
+                                const isUpdate = await updateAllDataById(u._id, detail)
+                                setUpdate(isUpdate)
+                            }}
+                        >
+                            Update All
+                        </button>
 
-                    }}>update</button>
+                        <button
+                            className="update-btn"
+                            onClick={async () => {
+                                const updated = await updateById(u._id, {
+                                    name: "nirmala ji"
+                                })
+                                setUpdate(updated)
+                            }}
+                        >
+                            Update
+                        </button>
 
-                    <button onClick={()=>{
-                        const deleated=deleteById(u._id)
-                        setUpdate(deleated)
-
-                    }}>delete</button>
+                        <button
+                            className="delete-btn"
+                            onClick={async () => {
+                                const deleted = await deleteById(u._id)
+                                setUpdate(deleted)
+                            }}
+                        >
+                            Delete
+                        </button>
+                    </div>
                 </div>
-            })}
-        </div>
-    )
+            )
+        })}
+    </div>
+)
 }
 
 export default Users

@@ -2,19 +2,31 @@ import { lazy } from 'react'
 import {createBrowserRouter} from 'react-router'
 import Create from '../pages/Create'
 import Users from '../pages/Users'
+import ProtectedRoute from './ProtectedRoute'
+import Login from '../pages/Login'
 const AppLayout=lazy(()=>import('../layout/AppLayout'))
 const router=createBrowserRouter([
     {
         path:"/",
         Component:AppLayout,
         children:[
+
+
+            {
+                path:"login",
+                Component:Login
+            },
             {
                 index:true,
-                Component:Create
+                element:<ProtectedRoute>
+                    <Create/>
+                </ProtectedRoute>
             },
             {
                 path:"/users",
-                Component:Users
+                 element:<ProtectedRoute>
+                    <Users/>
+                </ProtectedRoute>
             }
         ]
 
