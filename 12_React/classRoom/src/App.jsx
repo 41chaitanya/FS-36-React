@@ -17,11 +17,11 @@ const App = () => {
       <ProductList/>
       <Cart/>
 
-      {productData.map((p)=>{
+      {/* {productData.map((p)=>{
         return <>
           {p.title}
         </>
-      })}
+      })} */}
 
       <Camera/>
     </div>
