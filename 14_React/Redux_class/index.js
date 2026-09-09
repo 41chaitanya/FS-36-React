@@ -1,4 +1,5 @@
-const {createStore,combineReducers} =require("redux")
+const {createStore,combineReducers,applyMiddleware} =require("redux")
+const {logger} =require("redux-logger")
 
 
 
@@ -79,7 +80,7 @@ const rootReducer=combineReducers({
     IceCream:IceCreamReducer
 })
 
-const store =createStore(rootReducer )
+const store =createStore(rootReducer ,applyMiddleware(logger))
 
 //getState(). --> value of instance. return. krta  hai 
 
@@ -91,7 +92,7 @@ console.log("initail state",store.getState())
 
 
 
-const unSub=store.subscribe(()=>console.log("updated State",store.getState()))
+const unSub=store.subscribe(()=>{})
 
 // dispatch
 
