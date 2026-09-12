@@ -40,7 +40,7 @@ const  FETCH_PRODUCT_FAILURE="FETCH_PRODUCT_FAILURE"
         }
     }
 
-
+async. action func
     const fetchProduct=()=>{
         return async (dispath) => {
             dispath(fetchProductRequest())
